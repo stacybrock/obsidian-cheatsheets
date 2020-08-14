@@ -62,3 +62,6 @@ $ defaults write -g ApplePressAndHoldEnabled -bool false
 7. `cd /Volumes/<Mojave root disk>/Applications/`
 
 8. `rm -rf {News.app,Home.app,Stocks.app}`
+
+## Tags
+#macos

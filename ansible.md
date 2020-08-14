@@ -28,11 +28,11 @@ $ ansible-playbook -i inventoryfile site.yml --list-hosts
 ```
 
 ## Connecting to EC2 Instances
-
-**Configure host in inventory:**
+A bit of extra inventory config is required before ansible can connect to AWS EC2 instances...
 ```
 54.188.154.252 ansible_user=ec2-user ansible_ssh_private_key_file=~/.ssh/your.pem ansible_become=yes ansible_become_method=sudo
 ```
+- CentOS AMI images use the `centos` user instead
 
 ## Using Vault
 
