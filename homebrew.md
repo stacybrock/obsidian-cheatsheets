@@ -64,5 +64,18 @@ To resolve errors like "Some installed formulae are not readable" that seem to i
 $ brew update-reset
 ```
 
+## Fix Specific Errors
+### Error: Permission denied @ apply2files
+```
+$ brew cleanup
+...
+Error: Permission denied @ apply2files - /usr/local/lib/docker/cli-plugins
+```
+Resolution:
+```
+$ sudo chown -R ${LOGNAME}:staff /usr/local/lib/docker/
+$ brew cleanup
+```
+
 ## Tags
 #macos

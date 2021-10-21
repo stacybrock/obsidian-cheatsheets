@@ -11,3 +11,11 @@
 # Except this file
 !.gitignore
 ```
+
+## Change Author Email Across All Commits In a Repo
+==DANGER!== Using `git-filter-branch` is not for the faint of heart!
+
+```
+$ git filter-branch --commit-filter 'if [ "$GIT_AUTHOR_EMAIL" = "bademail@someplace.edu" ]; then export GIT_AUTHOR_EMAIL=goodemail@someplace.edu; fi; git commit-tree "$@"'
+$ git push -f origin master:master
+```

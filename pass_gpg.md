@@ -1,14 +1,10 @@
-# Pass and GPG
-
-## GPG Key
-
-**Generate a new GPG key:**
-```
-$ gpg --full-generate-key
-```
+# Pass For GPG Cheatsheet
+## GPG Pre-requisites
+Get the ID of the signing key. (Don't have one? See [[gpg|GPG]])
 
 **List GPG keys:**
 ```
+$ gpg --list-keys
 /Users/brock/.gnupg/pubring.kbx
 ------------------------
 pub   rsa4096 2019-07-19 [SC]
@@ -48,4 +44,10 @@ $ pass
 Password Store
 └── Folder
     └── EntryName
+```
+## Troubleshooting
+### gpg: WARNING: server 'gpg-agent' is older than us
+Occurs after GnuPG has been updated. Solution is to kick `gpg-agent`
+```shell
+$ gpgconf --kill -v gpg-agent
 ```

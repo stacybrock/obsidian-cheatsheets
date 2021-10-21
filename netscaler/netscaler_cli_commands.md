@@ -1,5 +1,31 @@
 # NetScaler CLI Commands
+## Basic Usage
+#### Show Stats
+```
+> sh lb vserver lb_vsvr_name
+> sh servicegroup svcgrp_name
+> sh server svr_name1
+```
 
+#### Disable a Server In a Service Group Pool
+```
+> disable server [SERVERNAME] [DELAY] -graceFul [NO|YES]
+```
+* `DELAY` and `-graceFul` are optional
+
+#### Enable a Server In a Service Group Pool
+```
+> enable server [SERVERNAME]
+```
+
+#### Save Running Configuration
+It's good practice to save the running config immediately after any set of changes.
+```
+> save ns config
+```
+Running config is written out to `/nsconfig/ns.conf`
+
+## Administrative
 **Open a Shell**
 ```
 > shell
@@ -11,12 +37,6 @@
 > sh running | more
 > sh running | grep something
 ```
-
-**Save Running Configuration**
-```
-> save ns config
-```
-Running config is written out to `/nsconfig/ns.conf`
 
 **Show Licenses**
 ```

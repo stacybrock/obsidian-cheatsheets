@@ -5,7 +5,7 @@
 Mac OS X 10.10.4+:
 
 ```
-$ sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder;
+$ sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder;
 ```
 
 ## Fix Borked Camera
