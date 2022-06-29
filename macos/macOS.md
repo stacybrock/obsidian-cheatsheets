@@ -14,11 +14,10 @@ $ sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder;
 $ sudo killall VDCAssistant
 ```
 
-## Show Hidden Files in Finder
+## Show/Hide Hidden (Dot) Files in Finder
 
 ```
-$ defaults write com.apple.finder AppleShowAllFiles TRUE
-$ killall Finder
+$ defaults write com.apple.finder AppleShowAllFiles -bool YES; killall -HUP Finder
 ```
 
 ## Edit crontab
@@ -43,25 +42,27 @@ $ sudo xattr -d com.apple.quarantine /path/to/the.app
 $ defaults write -g ApplePressAndHoldEnabled -bool false
 ```
 
+## Disable Microsoft AutoUpdate
+```
+$ defaults write com.microsoft.autoupdate2 'StartDaemonOnAppLaunch' -bool FALSE
+$ sudo defaults write /Library/LaunchAgents/com.microsoft.update.agent.plist Disabled -bool YES
+$ sudo defaults write /Library/LaunchAgents/com.microsoft.update.agent.plist RunAtLoad -bool NO
+$ sudo chflags schg /Library/LaunchAgents/com.microsoft.update.agent.plist
+```
+## Check SSD Usage with smartmontools
+```
+sudo smartctl --all /dev/disk0
+```
 ## Remove Unwanted Applications
-
-1. Install/Upgrade to Mojave
-
-2. Reboot into recovery mode. 
+1. Reboot into recovery mode. 
     - Shutdown or restart.
     - Hold `Command + R` and press power. Continue to hold the keyboard keys until the Apple logo and loading bar appears.
-
-3. Select Disk Utility from the list of options
-
-4. Select your MacOS Mojave installation disk on the left and click `Mount` on the top right.
-
-5. Close Disk Utility
-
-6. Open Terminal by clicking `Utilities -> Terminal`
-
-7. `cd /Volumes/<Mojave root disk>/Applications/`
-
-8. `rm -rf {News.app,Home.app,Stocks.app}`
+2. Select Disk Utility from the list of options
+3. Select your MacOS Mojave installation disk on the left and click `Mount` on the top right.
+4. Close Disk Utility
+5. Open Terminal by clicking `Utilities -> Terminal`
+6. `cd /Volumes/<Mojave root disk>/Applications/`
+7. `rm -rf {News.app,Home.app,Stocks.app}`
 
 ## Tags
 #macos

@@ -47,7 +47,7 @@ $ git checkout e0bac83f8c65bd49944b3b1104e1307707da4eab Formula/terragrunt.rb
 Install it:
 
 ```
-$ brew install terragrunt
+$ HOMEBREW_NO_AUTO_UPDATE=1 brew install terragrunt
 ```
 
 Optionally, pin the version to prevent automatic upgrades with `brew upgrade`:

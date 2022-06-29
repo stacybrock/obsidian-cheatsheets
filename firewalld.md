@@ -7,9 +7,10 @@
 # firewall-cmd --reload
 ```
 
-**List active zones**
+**List zones**
 ```
 # firewall-cmd --get-active-zones
+# firewall-cmd --list-all-zones
 ```
 
 **List rich rules**

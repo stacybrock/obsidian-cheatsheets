@@ -2,10 +2,11 @@
 ## Job Manifest File Locations
 Type|Location
 --|--
-User Agents|`~/Library/LaunchAgents/`
-Global Agents|`/Library/LaunchAgents/`
-System Agents|`/System/Library/LaunchAgents/`
-
+`~/Library/LaunchAgents`|Per-user agents provided by the user.
+`/Library/LaunchAgents`|Per-user agents provided by the administrator.
+`/Library/LaunchDaemons`|System wide daemons provided by the administrator.
+`/System/Library/LaunchAgents`|OS X Per-user agents.
+`/System/Library/LaunchDaemons`|OS X System wide daemons.
 ## CLI Command Reference
 ```
 $ launchctl list

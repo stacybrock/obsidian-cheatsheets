@@ -28,3 +28,21 @@ It's generally a good idea to generate revocation certificates as soon as a new 
 3. unused
 
 Store the revocation certificate files in a secure location separate from the signing key.
+
+## Troubleshooting
+### gpg: agent_genkey failed: Permission denied
+```
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilise the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
+gpg: agent_genkey failed: Permission denied
+Key generation failed: Permission denied
+```
+Solution:
+```
+$ ls  -la $(tty)
+crw------- 1 bart tty 136, 2 sie  2 13:08 /dev/pts/2
+$ logout
+# chmod o+rw /dev/pts/2
+```
