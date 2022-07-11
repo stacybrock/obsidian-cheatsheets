@@ -26,8 +26,3 @@ $ awk '{gsub(/"/, "", $2); print $2}' somefile.csv
 $ awk '{gsub(/'\''/, "", $1); print $1}' somefile.txt
 ```
 `'\''` is essentially a 4-character escape sequence for a `'` (single quote)
-
-## Quick IP Address
-```
-$ curl ipinfo.io
-```

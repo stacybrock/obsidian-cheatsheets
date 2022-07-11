@@ -13,15 +13,15 @@ jq .somekey | keys[] file.json
 {
   "KEY1": {
     "TABLE1": {},
-	"TABLE2": {},
-	"TABLE3": {}
+    "TABLE2": {},
+    "TABLE3": {}
   },
   "KEY2": {
     "TABLE4": {}
   },
   "KEY3": {
     "TABLE5": {},
-	"TABLE6": {}
+    "TABLE6": {}
   }
 }
 ```
