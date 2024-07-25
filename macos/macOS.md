@@ -36,19 +36,7 @@ If the OS keeps asking you if you want to run an app that was downloaded from th
 $ sudo xattr -d com.apple.quarantine /path/to/the.app
 ```
 
-## Disable Keyboard Long Press Accented Characters Popup
 
-```
-$ defaults write -g ApplePressAndHoldEnabled -bool false
-```
-
-## Disable Microsoft AutoUpdate
-```
-$ defaults write com.microsoft.autoupdate2 'StartDaemonOnAppLaunch' -bool FALSE
-$ sudo defaults write /Library/LaunchAgents/com.microsoft.update.agent.plist Disabled -bool YES
-$ sudo defaults write /Library/LaunchAgents/com.microsoft.update.agent.plist RunAtLoad -bool NO
-$ sudo chflags schg /Library/LaunchAgents/com.microsoft.update.agent.plist
-```
 ## Check SSD Usage with smartmontools
 ```
 sudo smartctl --all /dev/disk0
