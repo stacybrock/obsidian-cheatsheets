@@ -86,15 +86,16 @@ You probably have corrupted RPMDB, running 'rpm --rebuilddb' might fix the issue
 The downloaded packages were saved in cache until the next successful transaction.
 You can remove cached packages by executing 'dnf clean packages'.
 
+# dnf upgrade gcc
+# rm -rf /var/lib/rpm/__db*
+# rpm -vv --rebuilddb
+# rpm -e --nodeps gdbm-1.10-8.el7.x86_64
+# rpm -i /var/cache/dnf/baseos-XXXXX/packages/gdbm-libs-1.18-1.el8.x86_64.rpm
+
 # dnf remove redhat-rpm-config-9.1.0-88.el7.centos.noarch
 # dnf remove perl-devel-5.16.3-299.el7_9.x86_64
 # dnf remove python36-rpmconf-1.1.7-1.el7.1.noarch
 # dnf remove python-syspurpose-1.24.54-1.el7.centos.x86_64
-
-This might not be needed...
-# dnf upgrade gcc
-# rpm -e --nodeps gdbm-1.10-8.el7.x86_64
-# rpm -i /var/cache/dnf/baseos-XXXXX/packages/gdbm-libs-1.18-1.el8.x86_64.rpm
 ```
 Install new CentOS 8 kernel.
 ```
