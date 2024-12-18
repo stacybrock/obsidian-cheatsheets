@@ -14,6 +14,21 @@ $ sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder;
 $ sudo killall VDCAssistant
 ```
 
+## Adjust Spacing of Menu Bar Icons
+```
+$ defaults -currentHost write -globalDomain NSStatusItemSpacing -int x
+$ defaults -currentHost write -globalDomain NSStatusItemSelectionPadding -int y
+```
+where `x` and `y` are integers, 0 minimum value, 4 seems to be a good spacing value
+
+Logout to make changes take effect.
+
+To revert back to defaults:
+```
+$ defaults -currentHost delete -globalDomain NSStatusItemSelectionPadding
+$ defaults -currentHost delete -globalDomain NSStatusItemSpacing
+```
+
 ## Show/Hide Hidden (Dot) Files in Finder
 
 ```
@@ -36,13 +51,12 @@ If the OS keeps asking you if you want to run an app that was downloaded from th
 $ sudo xattr -d com.apple.quarantine /path/to/the.app
 ```
 
-
 ## Check SSD Usage with smartmontools
 ```
 sudo smartctl --all /dev/disk0
 ```
 ## Remove Unwanted Applications
-1. Reboot into recovery mode. 
+1. Reboot into recovery mode.
     - Shutdown or restart.
     - Hold `Command + R` and press power. Continue to hold the keyboard keys until the Apple logo and loading bar appears.
 2. Select Disk Utility from the list of options
