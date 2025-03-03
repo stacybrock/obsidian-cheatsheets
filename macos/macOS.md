@@ -51,10 +51,17 @@ If the OS keeps asking you if you want to run an app that was downloaded from th
 $ sudo xattr -d com.apple.quarantine /path/to/the.app
 ```
 
+## Disable Annoying macOS Upgrade Nag Notifications
+```
+$ defaults write com.apple.SoftwareUpdate MajorOSUserNotificationDate -date "2030-01-01 00:00:00 +0000"
+$ defaults write com.apple.SoftwareUpdate UserNotificationDate -date "2030-01-01 00:00:00 +0000"
+```
+
 ## Check SSD Usage with smartmontools
 ```
 sudo smartctl --all /dev/disk0
 ```
+
 ## Remove Unwanted Applications
 1. Reboot into recovery mode.
     - Shutdown or restart.
