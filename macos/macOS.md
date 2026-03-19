@@ -62,6 +62,11 @@ $ defaults write com.apple.SoftwareUpdate UserNotificationDate -date "2030-01-01
 sudo smartctl --all /dev/disk0
 ```
 
+## Remove "Microsoft Teams Audio" Device
+1. In Finder: `/Library/Audio/Plug-Ins/HAL/`
+2. Delete the Teams device driver
+3. `sudo killall -9 coreaudiod`
+
 ## Remove Unwanted Applications
 1. Reboot into recovery mode.
     - Shutdown or restart.
